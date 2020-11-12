@@ -1,0 +1,70 @@
+<div class="container">
+    
+    <h1 class="row justify-content-center">Palindrome Checker</h1>
+    <p>
+        A palindrome is a word or phrase that reads the same when flipped backwards. A few common examples include the words "eye", "civic", and "race car". 
+        More complex palindromes may include longer phrases such as "Are we not pure? “No, sir!” Panama’s moody Noriega brags. “It is garbage!” 
+        Irony dooms a man—a prisoner up to new era."-- believe it or not, that is a palindrome!
+        
+    </p>
+    <p>
+        For this section, we will be building a simple, yet quick Javascript function which will check whether a given string is a palindrome. 
+        These guides assume you already have an environment set up. If not, head over to <span><a href="https://jsfiddle.net/">JS Fiddle</a></span>
+        and pop in the code inside the "Javascript + No-Library" section to see it in live action.
+    </p>
+
+    <h2>The Code</h2>
+    <p>
+        FirstLets declare an arrow function which takes a string as an argument. Now inside the function, we take the string, and use the <span class="method">
+        toLowerCase()</span> method to convert the string to lower case. In the same line, we also include the <span class="method">replace()</span> 
+        method. This method will take two parameters: a <i>searchvalue</i> and a <i>newvalue</i>. For the <i>searchvalue</i>, we provide the following regular 
+        expression: <span class="method">/[W_]/g</span> and for the <i>newvalue</i> we will use an empty string. In essence, the regular expression will match 
+        for unwanted characters in the string and replace them with an empty field. For more on regular expressions, click 
+        <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-non-word">here.</a></span>
+     </p>
+    <figure class="justify-content-left">
+            <pre>
+                <code class="language-javascript line-numbers" >
+                    {{
+                        "const palindromeCheck = (string) => {
+                            string = string.toLowerCase().replace(/[\W_]/g, '');
+                        }"
+                    }}
+                </code>
+            </pre>
+    </figure>
+    
+    <figure>
+        <pre>
+            <code class="language-javascript line-numbers" >
+                {{
+                    "const palindromeCheck = (string) => {
+                        string = string.toLowerCase().replace(/[\W_]/g, '');
+                        for (let i = 0; i < string.length / 2; i++) {
+    
+                        }
+                    }"
+                }}
+            </code>
+        </pre>
+    </figure>
+    
+    <figure>
+        <pre>
+            <code class="language-javascript line-numbers" >
+                {{
+                    "const palindromeCheck = (string) => {
+                        string = string.toLowerCase().replace(/[\W_]/g, '');
+                        for (let i = 0; i < string.length / 2; i++) {
+                            if (string[i] !== string[string.length - 1 - i]){
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        }
+                    }"
+                }}
+            </code>
+        </pre>
+    </figure>
+</div>
